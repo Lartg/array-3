@@ -33,4 +33,12 @@ if __name__ == '__main__':
   target = 10
   print(solution(array, target))
 
-# diction could be cleaner, less ramble more intentional speech
+# apparently this is better
+class Solution:
+  def twoSum(self, nums: list, target: int) -> list:
+    hashmap = {}
+    for i in range(len(nums)):
+      complement = target - nums[i]
+      if complement in hashmap:
+        return [i, hashmap[complement]]
+      hashmap[nums[i]] = i
